@@ -1,12 +1,21 @@
 <html>
 <head>login page</head><br>
 <body>
+{% if login == "False" %}
 <form action="/login" method="POST" >
 Username:
 <input type="text" name="username" ><br>
 passward:
 <input type="text" name="password" ><br>
 <input type="submit" name="submit" value="login">
+{% else %}
+
+here is a list of pages you con go to,{{ session["username"] }}
+<a href="/product">product</a>
+<a href="/logout">logout</a>
+
+{% endif %}
+
 </form>
 </body>
 </html>
